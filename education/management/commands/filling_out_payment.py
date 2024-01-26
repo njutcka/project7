@@ -12,7 +12,7 @@ class Command(BaseCommand):
         users = User.objects.all()
         courses = Course.objects.all()
         lessons = Lesson.objects.all()
-        payment_methods = ['Credit card', 'PayPal', 'Bank transfer']
+        payment_methods = ['CARD', 'CASH']
 
         payments = []
 
