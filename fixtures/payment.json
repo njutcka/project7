@@ -1,0 +1,64 @@
+[
+  {
+    "model": "education.payment",
+    "pk": 1,
+    "fields": {
+      "user": 2,
+      "paid_course": 1,
+      "payment_amount": "120000.00",
+      "payment_method": "CASH",
+      "payment_date": "2024-01-06"
+    }
+  },{
+    "model": "education.payment",
+    "pk": 2,
+    "fields": {
+      "user": 2,
+      "paid_lesson": 4,
+      "payment_amount": "10000.00",
+      "payment_method": "CARD",
+      "payment_date": "2024-01-05"
+    }
+  },{
+    "model": "education.payment",
+    "pk": 3,
+    "fields": {
+      "user": 3,
+      "paid_course": 2,
+      "payment_amount": "130000.00",
+      "payment_method": "CARD",
+      "payment_date": "2024-01-04"
+    }
+  },{
+    "model": "education.payment",
+    "pk": 4,
+    "fields": {
+      "user": 4,
+      "paid_lesson": 5,
+      "payment_amount": "20000.00",
+      "payment_method": "CASH",
+      "payment_date": "2024-01-03"
+    }
+  },{
+    "model": "education.payment",
+    "pk": 5,
+    "fields": {
+      "user": 4,
+      "paid_lesson": 6,
+      "payment_amount": "25000.00",
+      "payment_method": "CARD",
+      "payment_date": "2024-01-02"
+    }
+  },{
+    "model": "education.payment",
+    "pk": 6,
+    "fields": {
+      "user": 2,
+      "paid_course": 2,
+      "payment_amount": "125000.00",
+      "payment_method": "CARD",
+      "payment_date": "2024-01-01"
+    }
+  }
+
+]

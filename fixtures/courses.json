@@ -1,0 +1,19 @@
+[
+  {
+    "model": "education.course",
+    "fields": {
+      "course_name": "Django",
+      "course_preview": "",
+      "course_description": "Django"
+    }
+  },
+  {
+    "model": "education.course",
+    "fields": {
+      "course_name": "DRF",
+      "course_preview": "",
+      "course_description": "DRF"
+    }
+  }
+
+]
