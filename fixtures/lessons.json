@@ -1,0 +1,62 @@
+[
+  {
+    "model": "education.lesson",
+    "fields": {
+      "lesson_name": "validators",
+      "lesson_preview": "",
+      "lesson_description": null,
+      "lesson_url": null,
+      "course": 1
+    }
+  },
+  {
+    "model": "education.lesson",
+    "fields": {
+      "lesson_name": "pagination",
+      "lesson_preview": "",
+      "lesson_description": null,
+      "lesson_url": null,
+      "course": 1
+    }
+  },
+  {
+    "model": "education.lesson",
+    "fields": {
+      "lesson_name": "tests",
+      "lesson_preview": "",
+      "lesson_description": null,
+      "lesson_url": null,
+      "course": 1
+    }
+  },
+  {
+    "model": "education.lesson",
+    "fields": {
+      "lesson_name": "Docker Hub",
+      "lesson_preview": "",
+      "lesson_description": null,
+      "lesson_url": null,
+      "course": 2
+    }
+  },
+  {
+    "model": "education.lesson",
+    "fields": {
+      "lesson_name": "Dockerfile",
+      "lesson_preview": "",
+      "lesson_description": null,
+      "lesson_url": null,
+      "course": 2
+    }
+  },
+  {
+    "model": "education.lesson",
+    "fields": {
+      "lesson_name": "Docker Compose",
+      "lesson_preview": "",
+      "lesson_description": null,
+      "lesson_url": null,
+      "course": 2
+    }
+  }
+]
