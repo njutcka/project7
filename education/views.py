@@ -3,7 +3,7 @@ from rest_framework import viewsets, generics
 from rest_framework.filters import OrderingFilter
 from rest_framework.permissions import IsAuthenticated
 
-from education.models import Course, Lesson, Payment, Subscription
+from education.models import Course, Lesson, Payment, Subscribe
 from education.serializers import CourseSerializer, LessonSerializer, PaymentSerializer, SubscriptionSerializer
 from education.paginators import CoursePaginator, LessonPaginator
 from education.permissions import Moderator, Author
@@ -29,6 +29,10 @@ class CourseViewSet(viewsets.ModelViewSet):
         new_course = serializer.save()
         new_course.author = self.request.user
         new_course.save()
+
+    def perform_update(self, serializer):
+        course = serializer.save()
+        send_updates.delay(course.pk)
 
 
 class LessonCreateAPIView(generics.CreateAPIView):
@@ -87,7 +91,7 @@ class PaymentListAPIView(generics.ListAPIView):
 class SubscribeCreateAPIView(generics.CreateAPIView):
     """Создание подписки на курс"""
     serializer_class = SubscriptionSerializer
-    queryset = Subscription.objects.all()
+    queryset = Subscribe.objects.all()
     permission_classes = (IsAuthenticated,)
 
     def perform_create(self, serializer):
@@ -101,12 +105,12 @@ class SubscribeCreateAPIView(generics.CreateAPIView):
 class SubscribeUpdateAPIView(generics.UpdateAPIView):
     """Редактирование подписки на курс"""
     serializer_class = SubscriptionSerializer
-    queryset = Subscription.objects.all()
+    queryset = Subscribe.objects.all()
     permission_classes = (IsAuthenticated, Author | Moderator,)
 
 
 class SubscribeDeleteAPIView(generics.DestroyAPIView):
     """Удаление подписки на курс"""
     serializer_class = SubscriptionSerializer
-    queryset = Subscription.objects.all()
+    queryset = Subscribe.objects.all()
     permission_classes = (IsAuthenticated,)

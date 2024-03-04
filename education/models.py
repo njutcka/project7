@@ -58,7 +58,7 @@ class Payment(models.Model):
         verbose_name_plural = 'Платежи'
 
 
-class Subscription(models.Model):
+class Subscribe(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='subscription', verbose_name='курс')
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name='пользователь', **NULLABLE)
     is_subscription = models.BooleanField(default=True, verbose_name='признак подписки')
