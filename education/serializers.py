@@ -1,6 +1,6 @@
 from rest_framework.serializers import CharField, ModelSerializer, SerializerMethodField, IntegerField
 
-from education.models import Course, Lesson, Payment, Subscription
+from education.models import Course, Lesson, Payment, Subscribe
 from education.validators import validate_data
 
 
@@ -27,7 +27,7 @@ class CourseSerializer(ModelSerializer):
 
     def get_is_subscribe(self, course):
         user = self.context['request'].user
-        subscription = Subscription.objects.filter(course=course.pk, user=user.pk, is_subscribe=True)
+        subscription = Subscribe.objects.filter(course=course.pk, user=user.pk, is_subscribe=True)
         if subscription:
             return True
         return False
@@ -41,5 +41,5 @@ class PaymentSerializer(ModelSerializer):
 
 class SubscriptionSerializer(ModelSerializer):
     class Meta:
-        model = Subscription
+        model = Subscribe
         fields = ('is_subscribe',)
